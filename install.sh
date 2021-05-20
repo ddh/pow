@@ -80,6 +80,7 @@
 
       if [ "$MAC_OS_MAJOR_VERSION" -eq 11 ]; then 
         echo "Big Sur detected!" >&2
+        exit 1
       fi
 
       if [ "$MAC_OS_MINOR_VERSION" -lt 6 ]; then
