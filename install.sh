@@ -82,7 +82,7 @@
         echo "Big Sur detected!" >&2
       fi
 
-      elif [ "$MAC_OS_MINOR_VERSION" -lt 6 ]; then
+      if [ "$MAC_OS_MINOR_VERSION" -lt 6 ]; then
         echo "Pow requires Mac OS X 10.6 or later." >&2
         exit 1
 
