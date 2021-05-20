@@ -76,8 +76,13 @@
 
       MAC_OS_VERSION="$(sw_vers -productVersion)"
       MAC_OS_MINOR_VERSION="$(version_component "$MAC_OS_VERSION" 2)"
+      MAC_OS_MAJOR_VERSION="$(version_component "$MAC_OS_VERSION" 1)"
 
-      if [ "$MAC_OS_MINOR_VERSION" -lt 6 ]; then
+      if [ "$MAC_OS_MAJOR_VERSION" -eq 11 ]; then 
+        echo "Big Sur detected!" >&2
+      fi
+
+      elif [ "$MAC_OS_MINOR_VERSION" -lt 6 ]; then
         echo "Pow requires Mac OS X 10.6 or later." >&2
         exit 1
 
